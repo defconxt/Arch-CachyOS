@@ -148,8 +148,9 @@ supported.
 
 This setup builds on the work of the following projects:
 
-- [LinuxTrack](https://github.com/uglyDwarf/linuxtrack) — TrackIR support on Linux via a Wine
-  bridge that intercepts NPClient DLL calls
+- [LinuxTrackX-IR](https://gitlab.com/fwfa123/linuxtrackx-ir) — TrackIR support on Linux via a
+  Wine bridge that intercepts NPClient DLL calls (successor to
+  [LinuxTrack](https://github.com/uglyDwarf/linuxtrack))
 - [LVRA (Linux VR Adventures)](https://lvra.gitlab.io/) — Linux VR community wiki covering
   OpenXR, WiVRn, Monado, and headset compatibility
 - [WiVRn](https://github.com/WiVRn/WiVRn) — OpenXR streaming runtime for standalone VR headsets
