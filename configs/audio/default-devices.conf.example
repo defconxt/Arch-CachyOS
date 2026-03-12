@@ -1,0 +1,18 @@
+# PipeWire default audio device config
+#
+# Purpose:    Sets the default audio sink (output) and source (input) for PipeWire.
+#             Default sink routes all program audio to the RODECaster System channel.
+#             Default source uses the RODECaster mic input directly (no software noise
+#             suppression — the RODECaster Duo's onboard DSP handles this instead).
+# Deploy to:  ~/.config/pipewire/pipewire.conf.d/default-devices.conf
+# CHANGEME_:  CHANGEME_RODECASTER_SERIAL — replace with your device serial number.
+#
+# Find your serial with: pactl list sources short | grep RODECaster
+# Example serial: XXXXXXXXXXX
+#
+# Script:     scripts/05-audio-setup.sh copies this with sed substitution automatically.
+
+context.properties = {
+    default.audio.sink   = rcp_duo_system_in
+    default.audio.source = alsa_input.usb-R__DE_RODECaster_Duo_CHANGEME_RODECASTER_SERIAL-00.analog-stereo
+}

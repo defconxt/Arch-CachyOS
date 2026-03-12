@@ -1,0 +1,17 @@
+# RODECaster Duo udev rule — HID/HIDRAW access for plugdev group
+#
+# Purpose:    Grants the plugdev group read/write access to the RODECaster Duo's
+#             HID/HIDRAW interface. Required for the rodecaster-duo-pipewire AUR package
+#             tools (rodecaster-duo-set-pro-audio, etc.) to communicate with the device
+#             without requiring root.
+# Deploy to:  /etc/udev/rules.d/99-rodecaster.rules  (requires sudo)
+# CHANGEME_:  None — vendor ID (19f7) and product ID (0050) are fixed for RODECaster Duo.
+#
+# Note:       The plugdev group is created by scripts/02-gaming-setup.sh and your user
+#             is added to it there. If you skipped that script, run:
+#               sudo groupadd plugdev && sudo usermod -aG plugdev "$USER"
+#             then log out and back in.
+#
+# Script:     scripts/05-audio-setup.sh copies this with sudo and reloads udev rules.
+
+SUBSYSTEM=="hidraw", ATTRS{idVendor}=="19f7", ATTRS{idProduct}=="0050", MODE="0660", GROUP="plugdev"

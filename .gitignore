@@ -1,0 +1,23 @@
+# Real config files — use *.example versions instead
+configs/vpn/*.conf
+configs/audio/*.conf
+configs/gaming/*.conf
+!configs/**/*.example
+
+# DCS World keybind export files — not for committing
+*.diff.lua
+
+# Editor artifacts
+.vscode/
+*.swp
+*~
+
+# macOS
+.DS_Store
+
+# Backup files
+*.bak
+*.orig
+
+# Torrents
+*.torrent

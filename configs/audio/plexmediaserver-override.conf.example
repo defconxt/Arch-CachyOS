@@ -1,0 +1,21 @@
+# Plex Media Server systemd override — wait for media drive mount
+#
+# Purpose:    Adds a systemd dependency so Plex Media Server starts only after
+#             /mnt/CHANGEME_MEDIA_MOUNT is mounted. Without this, Plex starts at boot before the
+#             media drive is available, fails to find the library, and requires a
+#             manual restart after the drive mounts.
+# Deploy to:  /etc/systemd/system/plexmediaserver.service.d/override.conf  (requires sudo)
+#             (The .service.d/ subdirectory is required — this is a systemd drop-in.)
+# CHANGEME_:  Replace CHANGEME_MEDIA_MOUNT with your actual media mount name (e.g. "media").
+#
+# If your media drive is mounted at a different path, adjust the mount unit name.
+# Convert path to unit name: replace / with - and strip leading -
+# Example: /mnt/CHANGEME_MEDIA_MOUNT → mnt-CHANGEME_MEDIA_MOUNT.mount
+#
+# After deploying, run: sudo systemctl daemon-reload
+#
+# Script:     scripts/05-audio-setup.sh copies this with sudo and runs daemon-reload.
+
+[Unit]
+After=mnt-CHANGEME_MEDIA_MOUNT.mount
+Requires=mnt-CHANGEME_MEDIA_MOUNT.mount

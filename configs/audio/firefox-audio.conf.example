@@ -1,0 +1,14 @@
+# Firefox PipeWire and Wayland environment variables
+#
+# Purpose:    Enables PipeWire audio integration and Wayland backend for Firefox.
+#             Required for Firefox to use PipeWire for audio (instead of ALSA/PulseAudio
+#             compatibility layer) and to run natively under Wayland (KDE Plasma).
+# Deploy to:  ~/.config/environment.d/firefox-audio.conf
+# CHANGEME_:  None — deploy as-is.
+#
+# Variables take effect on next login. No restart of Firefox required after login.
+#
+# Script:     scripts/05-audio-setup.sh copies this automatically.
+
+FIREFOX_PIPEWIRE=1
+MOZ_ENABLE_WAYLAND=1

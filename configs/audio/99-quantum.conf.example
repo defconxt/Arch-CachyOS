@@ -1,0 +1,15 @@
+# PipeWire quantum config — prevents Firefox audio dropouts
+#
+# Purpose:    Sets PipeWire clock rate and quantum buffer sizes to prevent
+#             timeout errors that cause audio dropouts in Firefox.
+# Deploy to:  ~/.config/pipewire/pipewire.conf.d/99-quantum.conf
+# CHANGEME_:  None — deploy as-is.
+#
+# Script:     scripts/05-audio-setup.sh copies this automatically.
+
+context.properties = {
+    default.clock.rate        = 48000
+    default.clock.quantum     = 1024
+    default.clock.min-quantum = 512
+    default.clock.max-quantum = 8192
+}

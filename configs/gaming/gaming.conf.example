@@ -1,0 +1,5 @@
+# NVIDIA OpenGL shader disk cache settings
+# Copy to ~/.config/environment.d/gaming.conf
+# Changes take effect on next login.
+__GL_SHADER_DISK_CACHE_SKIP_CLEANUP=1
+__GL_SHADER_DISK_CACHE_SIZE=10737418240

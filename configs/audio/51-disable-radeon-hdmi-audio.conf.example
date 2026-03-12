@@ -1,0 +1,30 @@
+# WirePlumber rule — disable Radeon iGPU HDMI audio device
+#
+# Purpose:    Disables the Radeon integrated GPU's HDMI audio output in WirePlumber.
+#             Prevents the iGPU audio from appearing as a PipeWire device and consuming
+#             ports, which can cause PipeWire startup port exhaustion on systems with
+#             many audio devices.
+# Deploy to:  ~/.config/wireplumber/wireplumber.conf.d/51-disable-radeon-hdmi-audio.conf
+# CHANGEME_:  None, but the device.name pattern MUST be adjusted for your hardware.
+#
+# IMPORTANT: Adjust device.name to match your hardware.
+# Find yours with: wpctl status | grep -i hdmi
+# The pattern below uses a regex match (~) for PCI audio devices — update as needed.
+# Example (Radeon iGPU): "~alsa_card.pci-0000_09_00.1.*"
+#
+# This is a pattern, not a copy-paste config. Do not deploy without adjusting device.name.
+#
+# Script:     scripts/05-audio-setup.sh copies this automatically.
+
+monitor.alsa.rules = [
+  {
+    matches = [
+      { device.name = "~alsa_card.pci-0000_xx_xx.*" }
+    ]
+    actions = {
+      update-props = {
+        device.disabled = true
+      }
+    }
+  }
+]

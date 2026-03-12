@@ -1,0 +1,17 @@
+# ProtonVPN WireGuard Configuration
+# Copy this file to proton-vpn.conf and fill in your values from ProtonVPN dashboard.
+# The real proton-vpn.conf is gitignored — only this .example is committed.
+# Run: grep -r 'CHANGEME_' . to find all values needing replacement.
+#
+# Download your WireGuard config from: account.protonvpn.com -> Downloads -> WireGuard
+
+[Interface]
+PrivateKey = CHANGEME_WG_PRIVATE_KEY
+Address = CHANGEME_WG_ADDRESS
+DNS = CHANGEME_WG_DNS
+
+[Peer]
+PublicKey = CHANGEME_WG_PUBKEY
+Endpoint = CHANGEME_WG_ENDPOINT
+AllowedIPs = 0.0.0.0/0
+PersistentKeepalive = 25
