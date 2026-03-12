@@ -47,7 +47,8 @@ NVIDIA encoder choices, CPU tuning notes) are specific to this setup but the pat
 | RAM | 64 GB |
 | Audio Interface | RODECaster Duo (USB) |
 | HOTAS | VKB STECS Throttle + Gladiator IV EVO + T-Rudder Pedals |
-| Head Tracker | TrackIR 5 |
+| Head Tracker | TrackIR 5 (sensor replaced with [RJSIMTECH BT clip](https://www.etsy.com/shop/RJSIMTECH)) |
+| Monitors | LG 5K2K + Corsair Xeneon Flex 45" |
 | VR Headset | Meta Quest 3 |
 | Streaming | Elgato Stream Deck |
 | Webcam | Logitech C920 |
