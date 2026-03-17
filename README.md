@@ -1,5 +1,5 @@
 # CachyOS Gaming Setup
-![Arch](./arch.png)
+![Arch](./cachyOS.png)
 Declarative configs and guides for a full gaming desktop on CachyOS/Arch Linux. Born from a
 complete Windows-to-Linux migration finished in about three days. Everything here is a real
 daily-driver setup — not a proof of concept.
